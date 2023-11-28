@@ -30,7 +30,7 @@ exports.obtenerDatoTarjeta = async function (codigo) {
             params: params(codigo)
         })
 
-        console.log(solicitud.data)
+        //console.log(solicitud.data)
     
         var $ = cheerio.load(solicitud.data);
 

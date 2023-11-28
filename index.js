@@ -8,7 +8,7 @@ app.get('/api/tarjeta', (req, res) => {
     obtenerDatoTarjeta(req.query.codigo).then((datos) => {
       console.log(datos)
       res.json(datos)
-    }).then((error) => {
+    }).catch((error) => {
       res.json(error)
     })
   } else {
@@ -16,6 +16,8 @@ app.get('/api/tarjeta', (req, res) => {
   }
 })
 
+app.use('/', express.static('public'))
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`App listening on port ${port}`)
 })
